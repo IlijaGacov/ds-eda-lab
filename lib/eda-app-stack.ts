@@ -67,7 +67,7 @@ export class EDAAppStack extends cdk.Stack {
 
   imagesBucket.addEventNotification(
     s3.EventType.OBJECT_CREATED,
-    new s3n.SnsDestination(newImageTopic)  // Changed
+    new s3n.SnsDestination(newImageTopic)
   );
 
   const newImageEventSource = new events.SqsEventSource(imageProcessQueue, {
